@@ -18,5 +18,14 @@ return {
     -- see below for full list of optional dependencies 👇
   },
 
-    -- see below for full list of options 👇
+  opts = {
+    workspaces = {
+      {
+        name = "Cocoon",
+        path = "~/Documents/Obsidian/Cocoon",
+      },
+    },
+  },
+
+  -- see below for full list of options 👇
 }
