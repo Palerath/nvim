@@ -14,26 +14,9 @@ return {
   },
 
   {
-    "mrcjkb/rustaceanvim",
-    version = "^5", -- Recommended
+    'mrcjkb/rustaceanvim',
+    version = '^6', -- Recommended
     lazy = false, -- This plugin is already lazy
-    ft = "rust",
-    config = function()
-      local mason_registry = require "mason-registry"
-      local codelldb = mason_registry.get_package "codelldb"
-      local extension_path = codelldb:get_install_path() .. "/extension/"
-      local codelldb_path = extension_path .. "adapter/codelldb"
-      local liblldb_path = extension_path .. "lldb/lib/liblldb.dylib"
-      -- If you are on Linux, replace the line above with the line below:
-      -- local liblldb_path = extension_path .. "lldb/lib/liblldb.so"
-      local cfg = require "rustaceanvim.config"
-
-      vim.g.rustaceanvim = {
-        dap = {
-          adapter = cfg.get_codelldb_adapter(codelldb_path, liblldb_path),
-        },
-      }
-    end,
   },
 
   {
@@ -88,20 +71,20 @@ return {
     end,
   },
   {
-	"L3MON4D3/LuaSnip",
-	-- follow latest release.
-	version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-	-- install jsregexp (optional!).
-	build = "make install_jsregexp"
+    "L3MON4D3/LuaSnip",
+    -- follow latest release.
+    version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+    -- install jsregexp (optional!).
+    build = "make install_jsregexp"
   },
   {
-  "lervag/vimtex",
-  lazy = false,     -- we don't want to lazy load VimTeX
-  -- tag = "v2.15", -- uncomment to pin to a specific release
-  init = function()
-    -- VimTeX configuration goes here, e.g.
-    vim.g.vimtex_view_method = "zathura"
-  end
+    "lervag/vimtex",
+    lazy = false,     -- we don't want to lazy load VimTeX
+    -- tag = "v2.15", -- uncomment to pin to a specific release
+    init = function()
+      -- VimTeX configuration goes here, e.g.
+      vim.g.vimtex_view_method = "zathura"
+    end
   },
   {
     'windwp/nvim-autopairs',
@@ -111,12 +94,12 @@ return {
     -- this is equivalent to setup({}) function
   },
   {
-  "nvim-treesitter/nvim-treesitter",
-   opts = {
-  		ensure_installed = {
-  			"vim", "lua", "vimdoc",
-       "html", "css"
-  		},
-  	},
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "vim", "lua", "vimdoc",
+        "html", "css"
+      },
+    },
   },
 }
